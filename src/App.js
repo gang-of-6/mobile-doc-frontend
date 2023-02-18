@@ -1,11 +1,12 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Header from './component/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to Mobile-Doc</h1>
-      </header>
+    <div className="App">      
+        <Header />
     </div>
   );
 }
