@@ -1,4 +1,5 @@
 # Mobile Doc - Frontend 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6250db22-5746-4ce0-8f66-ffd10ffca029/deploy-status)](https://app.netlify.com/sites/mobile-doc/deploys)
 
 ## Development 
 
