@@ -13,8 +13,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/patient" element={<Patient />} />
-          <Route path="/doctor" element={<Doctor />} />
+          <Route path="/patient" element={<Patient forPatient={true} />} />
+          <Route path="/doctor" element={<Doctor forPatient={false} />} />
         </Routes>
       </Router>
     </div>

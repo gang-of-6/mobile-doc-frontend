@@ -5,7 +5,7 @@ import { Drawer, List, Stack, Toolbar } from "@mui/material";
 import SidebarItem from './SidebarItem';
 import SidebarItems from './SidebarItems';
 
-const Sidebar = () => {
+const Sidebar = ({ forPatient }) => { //The forPatient prop is not used yet, need to think about how to use it
   return (
     <Drawer
     variant="permanent"

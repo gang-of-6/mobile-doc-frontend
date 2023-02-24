@@ -7,7 +7,7 @@ import Badge from "react-bootstrap/Badge"
 import { Search } from "@mui/icons-material"
 import ClearIcon from '@mui/icons-material/Clear';
 
-const PageLayout = () => {
+const PatientPageLayout = () => {
 
   let [symptoms, setSymtoms] = useState([]);
   let [searchText, setSearch] = useState("");
@@ -92,4 +92,4 @@ const PageLayout = () => {
   )
 }
 
-export default PageLayout
+export default PatientPageLayout
