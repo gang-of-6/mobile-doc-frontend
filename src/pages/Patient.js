@@ -1,8 +1,8 @@
 import Sidebar from "../component/Sidebar"
-import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import PageLayout from "../component/PageLayout";
 import { Col } from "react-bootstrap";
+
 
 const Patient = () => {
   return (
@@ -12,7 +12,7 @@ const Patient = () => {
           <Sidebar />
         </Col>
         <Col>
-          <PageLayout />
+            <PageLayout />
         </Col>
       </Row>
     </>
