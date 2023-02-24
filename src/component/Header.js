@@ -7,7 +7,7 @@ const Header = () => {
         <div style={{ justifyContent: 'space-between', display: 'flex' }}>
           <Buttons text="Doctor" />
           &nbsp;&nbsp;&nbsp;
-          <Buttons text="Patient" />
+          <Buttons text="Patient" link="/patient" />
         </div>
     </header>
   )

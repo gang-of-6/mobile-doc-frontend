@@ -1,8 +1,9 @@
-import Button from 'react-bootstrap/Button';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
-const Buttons = ({ text }) => {
+const Buttons = ({ text, link }) => {
   return (
-    <Button>{text}</Button>
+    <Button component={Link} to={link}>{text}</Button>
   )
 }
 
