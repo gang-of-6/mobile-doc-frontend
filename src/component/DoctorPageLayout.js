@@ -4,29 +4,11 @@ import PersonIcon from '@mui/icons-material/Person';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import DownloadIcon from '@mui/icons-material/Download';
 
-import { Button } from "@mui/material";
+import UpcomingPatientList from "./UpcomingPatientList";
+
+import Buttons from "./Buttons";
 
 const DoctorPageLayout = () => {
-
-    const upcomingList = [
-        {
-            name: "Dr. John Doe",
-            time: "10:00 AM"
-        },
-        {
-            name: "Dr. John Doe",
-            time: "10:00 AM"
-        },
-        {
-            name: "Dr. John Doe",
-            time: "10:00 AM"
-        },
-        {
-            name: "Dr. John Doe",
-            time: "10:00 AM"
-        },
-    ]
-
     return (
         <>
             <Row style={{ marginTop: "40px" }}>
@@ -48,9 +30,7 @@ const DoctorPageLayout = () => {
                                     <h3>Dr. John Doe</h3>
                                 </Col>
                                 <Col>
-                                    <Button variant="contained">
-                                        Finish
-                                    </Button>
+                                    <Buttons text="End" variant="contained" link="/doctor/patientView" />
                                 </Col>
                             </Row>
                         </Container>
@@ -60,7 +40,7 @@ const DoctorPageLayout = () => {
                             <h4>Up coming</h4>
                             <br />
                             <Container style={{ marginLeft: "10px" }}>
-                                {upcomingList.map((item, index) => (
+                                {UpcomingPatientList.map((item, index) => (
                                     <Row>
                                         <Container style={{ maxWidth: "900px", backgroundColor: "#F9F9F9" }}>
                                             <Row>
@@ -77,9 +57,7 @@ const DoctorPageLayout = () => {
                                                     <p>{item.time}</p>
                                                 </Col>
                                                 <Col>
-                                                    <Button>
-                                                        <DownloadIcon />
-                                                    </Button>
+                                                    <Buttons text={<DownloadIcon/>} link="#" />
                                                 </Col>
                                             </Row>
                                         </Container>

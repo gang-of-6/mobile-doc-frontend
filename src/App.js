@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/patient" element={<Patient forPatient={true} />} />
           <Route path="/doctor" element={<Doctor forPatient={false} />} />
+          <Route path="/doctor/patientView" element={<Patient forPatient={false} />} />
         </Routes>
       </Router>
     </div>
