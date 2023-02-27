@@ -1,6 +1,7 @@
 import Sidebar from "../component/Sidebar"
 import Row from "react-bootstrap/Row";
 import { Col } from "react-bootstrap";
+import DoctorPageLayout from "../component/DoctorPageLayout";
 
 const Doctor = ({ forPatient }) => {
   return (
@@ -10,7 +11,7 @@ const Doctor = ({ forPatient }) => {
           <Sidebar forPatient={forPatient} />
         </Col>
         <Col>
-            <h1>Hello Doctor</h1>
+            <DoctorPageLayout/>
         </Col>
       </Row>
     </>
