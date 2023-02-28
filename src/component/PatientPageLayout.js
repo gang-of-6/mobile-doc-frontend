@@ -48,7 +48,7 @@ const PatientPageLayout = ({ sessionId }) => {
 
     let temp = '';
 
-    symtomData.correlated_symptoms.map((symptom) => {
+    symtomData.correlated_symptoms.forEach((symptom) => {
       temp += symptom + '/';
     });
     setSuggestedSymptoms(temp);
