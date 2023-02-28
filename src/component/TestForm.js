@@ -1,18 +1,18 @@
 import Form from 'react-bootstrap/Form';
 
-function MedicineForm ({ index }) {
+function TestForm ({ index }) {
     return (
         <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Medicine {{index}} </Form.Label>
+                <Form.Label>Tests {{index}} </Form.Label>
                 <Form.Control type="text" placeholder="Enter email" />
                 <Form.Text className="text-muted">
-                    Medicine Name
+                    Test Name
                 </Form.Text>
             </Form.Group>
         </Form>
     )
 }
 
-export default MedicineForm;
+export default TestForm;
 
