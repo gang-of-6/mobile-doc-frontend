@@ -31,7 +31,7 @@ const Sidebar = ({ forPatient }) => { //The forPatient prop is not used yet, nee
         </Stack>
       </Toolbar>
       {SidebarItems.map((item, index) => (
-        <SidebarItem item={item} key={index} />
+        <SidebarItem forPatient={forPatient} item={item} key={index} />
         ))}
     </List>
   </Drawer>

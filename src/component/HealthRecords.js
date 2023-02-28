@@ -1,8 +1,20 @@
-const HealthRecords = () => {
+import Sidebar from "./Sidebar"
+import { Row, Col } from "react-bootstrap"
+
+const HealthRecords = ( {forPatient} ) => {
   return (
-    <div>
-      <h1>Health Records</h1>
-    </div>
+    <>
+      <Row>
+        <Col xs={2}>
+          <Sidebar forPatient={forPatient} />
+        </Col>
+        <Col>
+            <h1>
+              This page is under maintenance
+            </h1>
+        </Col>
+      </Row>
+    </>
   )
 }
 

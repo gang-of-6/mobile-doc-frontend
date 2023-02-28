@@ -8,6 +8,8 @@ import DoctorPrescribe from './pages/DoctorPrescribe';
 
 import Index from './component/Index';
 import PatientDashboard from './component/PatientDashboard';
+import HealthRecords from './component/HealthRecords';
+import PatientRecords from './component/PatientRecords';
 
 
 function App() {
@@ -16,7 +18,12 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/patient" element={<Patient forPatient={true} />} />
+          <Route path="/patient"  element={<Patient forPatient={true} />} />
+          <Route path="/patient/dashboard" element={<PatientDashboard forPatient={true} />} />
+          <Route path="/patient/healthRecords" element={<HealthRecords forPatient={true} />} />
+          <Route path="/patient/patientRecords" element={<PatientRecords forPatient={true} />} />
+          <Route path="/patient/appointments" element={<Patient forPatient={true} />} />
+
           <Route path="/doctor" element={<Doctor forPatient={false} />} />
           <Route path="/doctor/patientView" element={<Patient forPatient={false} />} />
           <Route path="/doctor/prescribe" element={<DoctorPrescribe />} />

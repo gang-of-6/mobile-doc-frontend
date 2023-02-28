@@ -1,20 +1,16 @@
 import { Col, Container, Row } from "react-bootstrap"
 
-import PersonIcon from '@mui/icons-material/Person';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
-import DownloadIcon from '@mui/icons-material/Download';
 
 import BloodtypeIcon from '@mui/icons-material/Bloodtype';
-import MonitorWeightIcon from '@mui/icons-material/MonitorWeight';
+import SummarizeIcon from '@mui/icons-material/Summarize';
 import CakeIcon from '@mui/icons-material/Cake';
 import HeightIcon from '@mui/icons-material/Height';
 import WorkIcon from '@mui/icons-material/Work';
 import HomeIcon from '@mui/icons-material/Home';
 import MailIcon from '@mui/icons-material/Mail';
 
-import UpcomingPatientList from "./UpcomingPatientList";
-
-import Buttons from "./Buttons";
+import Details from "./Details";
 
 import { useState, useEffect } from "react";
 import URL from "./APIURL";
@@ -22,21 +18,27 @@ import URL from "./APIURL";
 const PatientDashboardLayout = () => {
 
     const [data, setData] = useState(null);
+    const [showDetails, setShowDetails] = useState(false);
+
+    const handleArrowClick = () => {
+        setShowDetails(!showDetails);
+    };
 
     useEffect(() => {
-        fetch(URL + "patient/0001")
+        fetch(URL + "patient/EHR/0001")
             .then((res) => res.json())
             .then((data) => {
+                console.log(data);
                 setData(data);
             });
     }, []);
-    
+
     return (
         <>
             <Row style={{ marginTop: "40px" }}>
                 <Col xs={9}>
                     <Row>
-                        <h2>Hello {data == null ? "" : data.patient.name}</h2>
+                        <h2>Hello {data == null ? "" : data.patient_details.name}</h2>
                         <h6>Here is an overview of your activity</h6>
                         {console.log(data)}
                     </Row>
@@ -46,66 +48,67 @@ const PatientDashboardLayout = () => {
                             <br />
                             <Row>
                                 <Col>
-                                    <HomeIcon/> {data == null ? "" : data.patient.address}
+                                    <HomeIcon /> {data == null ? "" : data.patient_details.address}
                                 </Col>
                                 <Col>
-                                    <MailIcon/> {data == null ? "" : data.patient.email}
+                                    <MailIcon /> {data == null ? "" : data.patient_details.email}
                                 </Col>
                                 <Col>
-                                    <WorkIcon/> {data == null ? "" : data.patient.profession}
+                                    <WorkIcon /> {data == null ? "" : data.patient_details.profession}
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <CakeIcon/> {data == null ? "" : data.patient.date_of_brth}
+                                    <CakeIcon /> {data == null ? "" : data.patient_details.date_of_brth}
                                 </Col>
                                 <Col>
-                                    <BloodtypeIcon/> {data == null ? "" : data.patient.general_information.blood_group}
+                                    <BloodtypeIcon /> {data == null ? "" : data.patient_details.general_information.blood_group}
                                 </Col>
                                 <Col>
-                                    <HeightIcon/> {data == null ? "" : data.patient.physical_attributes[0].value}
+                                    <HeightIcon /> {data == null ? "" : data.patient_details.physical_attributes[0].value}
                                 </Col>
-                                
+
                             </Row>
-                            
+
                         </Container>
                     </Row>
                     <Row>
                         <Container>
-                            <h4>Up coming</h4>
+                            <h4>Test Reports</h4>
                             <br />
                             <Container style={{ marginLeft: "10px" }}>
-                                {UpcomingPatientList.map((item, index) => (
+                                {data == null ? "" : data.test_results.length > 0 && data.test_results.map((item, index) => (
+                                    <>
+                                    
                                     <Row>
                                         <Container style={{ maxWidth: "900px", backgroundColor: "#F9F9F9" }}>
                                             <Row>
                                                 <Col xs={1}>
-                                                    <PersonIcon fontSize="large" />
+                                                    <SummarizeIcon fontSize="large" />
                                                 </Col>
                                                 <Col xs={3}>
-                                                    <h6>{item.name}</h6>
+                                                    <h6>{item.test_name}</h6>
                                                 </Col>
                                                 <Col xs={1}>
                                                     <WatchLaterIcon fontSize="large" />
                                                 </Col>
                                                 <Col xs={5}>
-                                                    <p>{item.time}</p>
+                                                    <p>{item.date}</p>
                                                 </Col>
                                                 <Col>
-                                                    <Buttons text={<DownloadIcon/>} link="#" />
+                                                    <span style={{ cursor: "pointer" }} onClick={handleArrowClick}>{showDetails ? "▲" : "▼"}</span>
                                                 </Col>
                                             </Row>
                                         </Container>
                                     </Row>
+                                    <Row>
+                                        {showDetails && <Details details={item}/>}
+                                    </Row>
+                                    </>
                                 ))}
                             </Container>
                         </Container>
                     </Row>
-                </Col>
-                <Col>
-                    <Container>
-                        <h4>Previous Patients</h4>
-                    </Container>
                 </Col>
             </Row>
         </>

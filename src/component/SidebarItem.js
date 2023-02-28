@@ -1,12 +1,15 @@
 import { ListItemButton, ListItemIcon } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import ColorConfigs from "../configs/ColorConfigs";
+import { rootURL } from './APIURL'
 
-const SidebarItem = ({ item, key }) => {
+const SidebarItem = ({ forPatient, item, key }) => {
+    const location = useLocation();
+    const directory = forPatient ? "patient" : "doctor";
     return (
         <ListItemButton
             component={Link}
-            to={item.path}
+            to={rootURL + directory + item.path}
             sx={{
             "&: hover": {
                 backgroundColor: ColorConfigs.sidebar.hoverBg,

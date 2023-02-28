@@ -2,12 +2,9 @@ import Dashboard from "./Dashboard";
 import Appointment from "./Appointment";
 import HealthRecords from "./HealthRecords";
 import PatientRecords from "./PatientRecords";
-import Review from "./Review";
-import Profile from "./DoctorProfile";
 
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import EventIcon from '@mui/icons-material/Event';
-import PaymentsIcon from '@mui/icons-material/Payments';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 
 const SidebarItems = [
@@ -41,22 +38,6 @@ const SidebarItems = [
     state: "patientRecords",
     displayText: "Patient Records",
     icon: <AssignmentIcon />,
-    forPatient: false
-  },
-  {
-    path: "/review",
-    element: <Review />,
-    state: "review",
-    displayText: "Review",
-    icon: <PaymentsIcon />,
-    forPatient: false
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
-    state: "profile",
-    displayText: "Profile",
-    icon: <PaymentsIcon />,
     forPatient: false
   },
 ];
