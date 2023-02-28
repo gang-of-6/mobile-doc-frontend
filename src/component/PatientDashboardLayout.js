@@ -9,6 +9,9 @@ import HeightIcon from '@mui/icons-material/Height';
 import WorkIcon from '@mui/icons-material/Work';
 import HomeIcon from '@mui/icons-material/Home';
 import MailIcon from '@mui/icons-material/Mail';
+import SmokingRoomsIcon from '@mui/icons-material/SmokingRooms';
+import DangerousIcon from '@mui/icons-material/Dangerous';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 
 import Details from "./Details";
 
@@ -66,6 +69,18 @@ const PatientDashboardLayout = () => {
                                 </Col>
                                 <Col>
                                     <HeightIcon /> {data == null ? "" : data.patient_details.physical_attributes[0].value}
+                                </Col>
+
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <SmokingRoomsIcon /> Smoking : {data == null ? "" : (data.patient_details.general_information.smoking_history == null ? "No" : "Yes")}
+                                </Col>
+                                <Col>
+                                    <DangerousIcon /> Allergies:  {data == null ? "" : data.patient_details.general_information.allergies}
+                                </Col>
+                                <Col>
+                                    <DirectionsRunIcon /> Diabetes: {data == null ? "" : (data.patient_details.general_information.diabetes == null ? "No" : "Yes")}
                                 </Col>
 
                             </Row>

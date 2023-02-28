@@ -1,19 +1,19 @@
 
 const UpcomingPatientList = [
         {
-            name: "Dr. John Doe",
+            name: "Iftekhar Zeeon",
             time: "10:00 AM"
         },
         {
-            name: "Dr. John Doe",
+            name: "Shamit Fatin",
             time: "10:00 AM"
         },
         {
-            name: "Dr. John Doe",
+            name: "Salman",
             time: "10:00 AM"
         },
         {
-            name: "Dr. John Doe",
+            name: "Sameen",
             time: "10:00 AM"
         },
 ];

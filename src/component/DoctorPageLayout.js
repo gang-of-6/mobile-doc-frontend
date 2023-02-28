@@ -22,7 +22,7 @@ const DoctorPageLayout = ({ sessionId }) => {
             <Row style={{ marginTop: "40px" }}>
                 <Col xs={9}>
                     <Row>
-                        <h2>Hello Doctor</h2>
+                        <h2>Hello Doctor Fahmid Azam</h2>
                         <h6>Here is an overview of your activity</h6>
                     </Row>
                     <Row>
@@ -35,7 +35,7 @@ const DoctorPageLayout = ({ sessionId }) => {
                                     <PersonIcon fontSize="large" />
                                 </Col>
                                 <Col xs={8}>
-                                    <h3>Dr. John Doe</h3>
+                                    <h3>Dhrubo Kamal</h3>
                                 </Col>
                                 <Col>
                                     <Buttons text="End" variant="contained" onClickFunction={handleEnd} />
