@@ -62,6 +62,15 @@ function PrescriptionForm({ sessionId }) {
       });
       const data = await response.json();
       console.log(data);
+      if (data != null) {
+        if (data.success === true) {
+          alert("Prescription updated successfully");
+        } else {
+          alert("Prescription update failed");
+        }
+      } else {
+        alert("Prescription update failed");
+      }
   }
 
   return (
@@ -72,14 +81,14 @@ function PrescriptionForm({ sessionId }) {
         <Row>
             <Form.Group className="mb-3" controlId="formBasicEmail" id="diagnosis">
                 <Form.Label> Diagnosis </Form.Label>
-                <Form.Control type="text" placeholder="Enter patient diagnosis" onChange={(ev) => {setDiagnosis(ev.target.value)}} />
+                <Form.Control required={true} type="text" placeholder="Enter patient diagnosis" onChange={(ev) => {setDiagnosis(ev.target.value)}} />
                 <Form.Text className="text-muted"> Diagnosis </Form.Text>
             </Form.Group>
         </Row>
         <Row>
             <Form.Group className="mb-3" controlId="formBasicEmail" id="advice">
                 <Form.Label> Advice </Form.Label>
-                <Form.Control type="text" placeholder="Enter advice" onChange={(ev) => {setAdvice(ev.target.value)}} />
+                <Form.Control required={true} type="text" placeholder="Enter advice" onChange={(ev) => {setAdvice(ev.target.value)}} />
                 <Form.Text className="text-muted"> Advice </Form.Text>
             </Form.Group>
         </Row>
@@ -88,7 +97,7 @@ function PrescriptionForm({ sessionId }) {
                 return (
                     <Form.Group className="mb-3" controlId="formBasicEmail" id="test">
                         <Form.Label>Tests {index} </Form.Label>
-                        <Form.Control type="text" placeholder="Enter Test" onChange={ev => setTestAtIdx(index, ev.target.value)} />
+                        <Form.Control required={true} type="text" placeholder="Enter Test" onChange={ev => setTestAtIdx(index, ev.target.value)} />
                         <Form.Text className="text-muted">
                             Test Name
                         </Form.Text>
@@ -102,7 +111,7 @@ function PrescriptionForm({ sessionId }) {
                 return (
                     <Form.Group className="mb-3" controlId="formBasicEmail" id="test">
                         <Form.Label>Medicine {index} </Form.Label>
-                        <Form.Control type="text" placeholder="Enter Test" onChange={ev => setMedicineAtIdx(index, ev.target.value)} />
+                        <Form.Control required={true} type="text" placeholder="Enter Test" onChange={ev => setMedicineAtIdx(index, ev.target.value)} />
                         <Form.Text className="text-muted">
                             Medicine Name
                         </Form.Text>
