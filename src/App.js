@@ -10,6 +10,7 @@ import Index from './component/Index';
 import PatientDashboard from './component/PatientDashboard';
 import HealthRecords from './component/HealthRecords';
 import PatientRecords from './component/PatientRecords';
+import Appointment from './component/Appointment';
 
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
           <Route path="/doctor" element={<Doctor forPatient={false} />} />
           <Route path="/doctor/patientView" element={<Patient forPatient={false} />} />
           <Route path="/doctor/prescribe" element={<DoctorPrescribe forPatient={false} />} />
+          <Route path="/doctor/dashboard" element={<PatientRecords forPatient={false} />} />
+          <Route path="/doctor/appointments" element={<Appointment forPatient={false} />} />
+          <Route path="/doctor/patientRecords" element={<HealthRecords forPatient={false} />} />
+          <Route path="/doctor/healthRecords" element={<PatientRecords forPatient={false} />} />
         </Routes>
       </Router>
     </div>
