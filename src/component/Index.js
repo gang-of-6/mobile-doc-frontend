@@ -1,11 +1,8 @@
 import Buttons from './Buttons';
 import { useNavigate } from "react-router-dom";
 import URL from './APIURL';
-import { useState } from 'react';
 
 const Index = () => {
-
-  const [session, setSession] = useState("");
 
   const patientId = '0001';
 
@@ -23,7 +20,6 @@ const Index = () => {
     console.log(data)
     if (data.success) {
       sessionStorage.setItem("session_id", data.created_session_id);
-      setSession(data.created_session_id);
       navigate("/patient?session_id=" + data.created_session_id);
     } else {
       alert(data.message);

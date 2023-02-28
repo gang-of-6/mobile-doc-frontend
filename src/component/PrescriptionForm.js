@@ -7,8 +7,8 @@ import Form from 'react-bootstrap/Form';
 import URL from './APIURL';
 
 function PrescriptionForm({ sessionId }) {
-    const [diagnosis, setDiagnosis] = useState("");
-    const [advice, setAdvice] = useState("");
+  const [diagnosis, setDiagnosis] = useState("");
+  const [advice, setAdvice] = useState("");
 
   const [medicineForms, setMedicineForms] = useState([]);
   const [medicineNames, setMedicineNames] = useState([]);

@@ -8,7 +8,6 @@ import DownloadIcon from '@mui/icons-material/Download';
 import UpcomingPatientList from "./UpcomingPatientList";
 
 import Buttons from "./Buttons";
-import PrescriptionForm from "./PrescriptionForm";
 
 const DoctorPageLayout = ({ sessionId }) => {
 
