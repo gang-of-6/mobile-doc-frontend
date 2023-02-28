@@ -7,6 +7,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import UpcomingPatientList from "./UpcomingPatientList";
 
 import Buttons from "./Buttons";
+import PrescriptionForm from "./PrescriptionForm";
 
 const DoctorPageLayout = () => {
     return (
@@ -35,6 +36,13 @@ const DoctorPageLayout = () => {
                             </Row>
                         </Container>
                     </Row>
+
+                    <Row>
+                        <Container style={{ marginLeft: "10px" }}>
+                            <PrescriptionForm/>
+                        </Container>
+                    </Row>
+
                     <Row>
                         <Container>
                             <h4>Up coming</h4>
