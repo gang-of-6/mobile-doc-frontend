@@ -5,7 +5,7 @@ import DoctorPageLayout from "../component/DoctorPageLayout";
 import { useSearchParams } from "react-router-dom";
 
 const Doctor = ({ forPatient }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   return (
     <>

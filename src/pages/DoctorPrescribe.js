@@ -6,7 +6,7 @@ import {Container} from "react-bootstrap";
 import PrescriptionForm from "../component/PrescriptionForm";
 
 const DoctorPrescribe = ({ forPatient }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   return (
     <>

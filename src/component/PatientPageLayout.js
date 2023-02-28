@@ -18,7 +18,7 @@ const PatientPageLayout = ({ sessionId }) => {
 
   const searchSymptom = async (e) => {
     e.preventDefault();
-    if (searchDuration == 0) {
+    if (searchDuration === 0) {
       alert("Please enter the duration of the symptom");
       return;
     }
@@ -139,7 +139,7 @@ const PatientPageLayout = ({ sessionId }) => {
             }
           </Row>
           <Row>
-            <p>{suggestedSymptoms == "" ? null : "Suggested: " + suggestedSymptoms}</p>
+            <p>{suggestedSymptoms === "" ? null : "Suggested: " + suggestedSymptoms}</p>
           </Row>
         </Container>
       </Row>
@@ -162,7 +162,7 @@ const PatientPageLayout = ({ sessionId }) => {
       <Row>
         <Container>
           <h4>Available Doctors</h4>
-          {doctors.length == 0 ? "Please specify more details to find a doctor." : doctors.map((doctor) => (<DoctorCard doctorDetails={doctor} />))}
+          {doctors.length === 0 ? "Please specify more details to find a doctor." : doctors.map((doctor) => (<DoctorCard doctorDetails={doctor} />))}
         </Container>
       </Row>
     </>

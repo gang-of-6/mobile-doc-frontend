@@ -1,10 +1,9 @@
 import { ListItemButton, ListItemIcon } from "@mui/material";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ColorConfigs from "../configs/ColorConfigs";
 import { rootURL } from './APIURL'
 
 const SidebarItem = ({ forPatient, item, key }) => {
-    const location = useLocation();
     const directory = forPatient ? "patient" : "doctor";
     return (
         <ListItemButton
@@ -19,7 +18,7 @@ const SidebarItem = ({ forPatient, item, key }) => {
             paddingX: "24px"
             }}
         >
-            <ListItemIcon sx={{
+            <ListItemIcon id={key} sx={{
             color: ColorConfigs.sidebar.color,
             }}>
             {item.icon && item.icon}
