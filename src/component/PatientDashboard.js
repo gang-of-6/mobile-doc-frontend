@@ -1,11 +1,11 @@
 import Sidebar from "../component/Sidebar"
 import Row from "react-bootstrap/Row";
-import PatientPageLayout from "../component/PatientPageLayout";
 import { Col } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
+import PatientDashboardLayout from "./PatientDashboardLayout";
 
 
-const Patient = ({ forPatient }) => {
+const PatientDashboard = ({ forPatient }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   return (
@@ -15,11 +15,11 @@ const Patient = ({ forPatient }) => {
           <Sidebar forPatient={forPatient} />
         </Col>
         <Col>
-            <PatientPageLayout sessionId={sessionId} />
+            <PatientDashboardLayout sessionId={sessionId} />
         </Col>
       </Row>
     </>
   )
 }
 
-export default Patient
+export default PatientDashboard

@@ -1,9 +1,8 @@
 import {Button} from '@mui/material'
-import { Link } from 'react-router-dom';
 
-const Buttons = ({ text, link, variant }) => {
+const Buttons = ({ text, onClickFunction, variant }) => {
   return (
-    <Button variant={variant} component={Link} to={link}>{text}</Button>
+    <Button variant={variant} onClick={onClickFunction}>{text}</Button>
   )
 }
 

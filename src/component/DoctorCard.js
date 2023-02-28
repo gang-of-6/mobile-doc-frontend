@@ -16,13 +16,12 @@ const DoctorCard = ({ doctorDetails }) => {
             </Card.Header>
             <Card.Body>
                 <Card.Subtitle className="mb-2 text-muted">
-                    {doctorDetails.speciality}
+                    {doctorDetails.designation},{doctorDetails.speciality}
                 </Card.Subtitle>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
+                    Doctor Registration Number: {doctorDetails.doctor_id}
                 </Card.Text>
-                <Button variant="primary" component={Link} to={`/doctor/${doctorDetails.id}`}>
+                <Button variant="primary" component={Link} to={`/doctor/${doctorDetails.doctor_id}`}>
                     View Profile
                 </Button>
             </Card.Body>

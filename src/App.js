@@ -6,6 +6,7 @@ import Patient from './pages/Patient';
 import Doctor from './pages/Doctor';
 
 import Index from './component/Index';
+import PatientDashboard from './component/PatientDashboard';
 
 function App() {
   return (
