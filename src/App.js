@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'; //This is very important for desi
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Patient from './pages/Patient';
 import Doctor from './pages/Doctor';
+import DoctorPrescribe from './pages/DoctorPrescribe';
 
 import Index from './component/Index';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
           <Route path="/patient" element={<Patient forPatient={true} />} />
           <Route path="/doctor" element={<Doctor forPatient={false} />} />
           <Route path="/doctor/patientView" element={<Patient forPatient={false} />} />
+          <Route path="/doctor/prescribe" element={<DoctorPrescribe />} />
         </Routes>
       </Router>
     </div>
