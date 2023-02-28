@@ -1,23 +1,25 @@
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { Col } from "react-bootstrap";
-import PrescriptionForm from "../component/PrescriptionForm";
+import Sidebar from "../component/Sidebar";
+import { useSearchParams } from "react-router-dom";
 
-const DoctorPrescribe = () => {
+const DoctorPrescribe = ({ forPatient }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sessionId = searchParams.get("session_id");
   return (
     <>
       <Row>
-        <Col>
-          <h1>Hello</h1>
+        <Col xs={2}>
+          <Sidebar forPatient={forPatient} />
         </Col>
-        <Col xs={5}>
-            <Container>
-                <PrescriptionForm/>
-            </Container>
+        <Col>
+            <h1>
+              This page is under maintenance
+            </h1>
         </Col>
       </Row>
     </>
-  );
+  )
 };
 
 export default DoctorPrescribe;

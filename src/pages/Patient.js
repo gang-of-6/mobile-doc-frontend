@@ -4,7 +4,6 @@ import PatientPageLayout from "../component/PatientPageLayout";
 import { Col } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 
-
 const Patient = ({ forPatient }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");

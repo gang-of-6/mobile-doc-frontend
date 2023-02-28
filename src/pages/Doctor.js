@@ -2,8 +2,11 @@ import Sidebar from "../component/Sidebar"
 import Row from "react-bootstrap/Row";
 import { Col } from "react-bootstrap";
 import DoctorPageLayout from "../component/DoctorPageLayout";
+import { useSearchParams } from "react-router-dom";
 
 const Doctor = ({ forPatient }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sessionId = searchParams.get("session_id");
   return (
     <>
       <Row>
@@ -11,7 +14,7 @@ const Doctor = ({ forPatient }) => {
           <Sidebar forPatient={forPatient} />
         </Col>
         <Col>
-            <DoctorPageLayout/>
+            <DoctorPageLayout sessionId={sessionId}/>
         </Col>
       </Row>
     </>

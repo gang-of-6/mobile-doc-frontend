@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
+import { useNavigate } from "react-router-dom";
 
 import PersonIcon from '@mui/icons-material/Person';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
@@ -9,7 +10,14 @@ import UpcomingPatientList from "./UpcomingPatientList";
 import Buttons from "./Buttons";
 import PrescriptionForm from "./PrescriptionForm";
 
-const DoctorPageLayout = () => {
+const DoctorPageLayout = ({ sessionId }) => {
+
+    const navigate = useNavigate();
+    
+
+    const handleEnd = () => {
+        navigate("/doctor/prescribe?session_id=" + sessionId);
+    };
     return (
         <>
             <Row style={{ marginTop: "40px" }}>
@@ -31,7 +39,7 @@ const DoctorPageLayout = () => {
                                     <h3>Dr. John Doe</h3>
                                 </Col>
                                 <Col>
-                                    <Buttons text="End" variant="contained" link="/doctor/prescribe" />
+                                    <Buttons text="End" variant="contained" onClickFunction={handleEnd} />
                                 </Col>
                             </Row>
                         </Container>
