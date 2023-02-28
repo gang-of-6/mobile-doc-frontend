@@ -30,7 +30,7 @@ const DoctorPageLayout = () => {
                                     <h3>Dr. John Doe</h3>
                                 </Col>
                                 <Col>
-                                    <Buttons text="End" variant="contained" link="/doctor/patientView" />
+                                    <Buttons text="End" variant="contained" link="/doctor/prescribe" />
                                 </Col>
                             </Row>
                         </Container>
