@@ -37,13 +37,14 @@ function PrescriptionForm() {
         </Row>
         <Row>
             {testForms.map(item => <p>{item}</p>)}
+            <Col><Button onClick={addTest}>Add Test</Button></Col>
         </Row>
       <Row>
             {medicineForms.map(item => <p>{item}</p>)}
+            <Col><Button onClick={addMedicine}>Add Medicine</Button></Col>
       </Row>
       <Row>
         <Col><Button>Finish</Button></Col>
-        <Col><Button onClick={addMedicine}>Add More</Button></Col>
       </Row>
     </Container>
   );
