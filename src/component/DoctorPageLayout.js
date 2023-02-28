@@ -46,9 +46,7 @@ const DoctorPageLayout = ({ sessionId }) => {
                     </Row>
 
                     <Row>
-                        <Container style={{ marginLeft: "10px" }}>
-                            <PrescriptionForm/>
-                        </Container>
+
                     </Row>
 
                     <Row>

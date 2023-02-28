@@ -2,6 +2,8 @@ import Row from "react-bootstrap/Row";
 import { Col } from "react-bootstrap";
 import Sidebar from "../component/Sidebar";
 import { useSearchParams } from "react-router-dom";
+import {Container} from "react-bootstrap";
+import PrescriptionForm from "../component/PrescriptionForm";
 
 const DoctorPrescribe = ({ forPatient }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,9 +15,9 @@ const DoctorPrescribe = ({ forPatient }) => {
           <Sidebar forPatient={forPatient} />
         </Col>
         <Col>
-            <h1>
-              This page is under maintenance
-            </h1>
+          <Container style={{ marginLeft: "10px" }}>
+            <PrescriptionForm sessionId = {sessionId} />
+          </Container>
         </Col>
       </Row>
     </>
